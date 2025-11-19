@@ -28,7 +28,10 @@ Note that $(y)$ are the observed values, $(\hat{y})$ are the estimated values, $
 When translating this over to a linear programming methodology, the penalty instead becomes a constraint. An upper limit is given on the sum of the absolute values of the model coefficients. The objective function of this LP is simply the RSS portion from above.
 
 $$
-\min \sum (y_i - \hat{y}_i)^2 \\
+\min \sum (y_i - \hat{y}_i)^2
+$$
+
+$$
 \text{subject to: } \sum_{j=1}^{p} |\beta_j| \le t
 $$
 
