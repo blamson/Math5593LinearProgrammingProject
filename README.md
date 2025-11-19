@@ -16,3 +16,5 @@ We'll be using this to make sure we're both using the same python version and li
 # Lasso Regression
 
 [IBM Article](https://www.ibm.com/think/topics/lasso-regression)
+
+[Useful slides](https://www.haowulab.org/teaching/statcomp/Notes/lp3.pdf)
