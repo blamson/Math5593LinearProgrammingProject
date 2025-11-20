@@ -16,7 +16,7 @@ $$
 
 $$
 \text{LASSO Regression: } \quad
-\underbrace{\min \sum_{i=1}^n (y_i - \hat{y}_i)^2}_{\text{RSS}}
+\min \underbrace{ \sum_{i=1}^n (y_i - \hat{y}_i)^2}_{\text{RSS}}
 +
 \underbrace{\lambda \sum_{j=1}^p |b_j|}_{\text{Penalty}}
 $$
