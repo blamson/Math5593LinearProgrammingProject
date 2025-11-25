@@ -11,8 +11,9 @@ param y{i in I};           # response
 param x{i in I, j in J};   # regressors x_ij
 param t;                   # L1 budget
 
-#since orignally not in standard format for ampl we have to translate into the poistive and engative side
+#since orignally not in standard format for ampl we have to translate into the poistive and negative side
 var bplus{j in J}  >= 0;   # b_j^+ 
+
 var bminus{j in J} >= 0;   # b_j^-
 
 # same as: max -sum_i ( ... )^2
