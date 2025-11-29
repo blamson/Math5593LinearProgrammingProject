@@ -1,0 +1,38 @@
+\section{Background information}
+
+\begin{frame}{What is regression?}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item Regreesion fits a line, plane or hyperplane through a set of points in $n$ dimensional space.
+                \item This fitting is done by treating the "response" variable as a function of other "predictor" variables.
+                \item The fit is improved by minimizing the lines overall distance from the points, otherwise known as the residuals.
+                \item This is known as minimizing the "residual sum of squares", or, RSS.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \includegraphics[scale=0.45]{img/residual.png}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Penalized Regression}
+    \begin{itemize}
+        \item Having more predictors can often improve model performance, but at the cost of increased complexity.
+        \item There are many consequences to overly complex models, so penalized regression models attempt to help with this.
+        \item LASSO regression is surprise, a type of penalized regression.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Penalized Regression Structure}
+    Penalized regression is made up of two chunks. The RSS part shared with linear regression, and a new penalty chunk.
+
+    \begin{align*}
+        \text{Linear Regression: } \quad &\min \sum_{i=1}^n (y_i - \hat{y}_i)^2 \\
+        \text{LASSO Regression: } \quad
+        &\min \underbrace{ \sum_{i=1}^n (y_i - \hat{y}_i)^2}_{\text{RSS}}
+        +
+        \underbrace{\lambda \sum_{j=1}^p |b_j|}_{\text{Penalty}} \\
+        \hat{y}_i &= \sum_{j=1}^p b_j x_{ij}
+    \end{align*}
+\end{frame}
