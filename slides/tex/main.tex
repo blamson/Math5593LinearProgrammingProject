@@ -1,5 +1,8 @@
 \documentclass{cubeamer}
 
+\usepackage{minted}   % requires -shell-escape
+
+
 \title{LASSO Regression as a Quadratic Program}
 \subtitle{MATH 5593 - Linear Programming}
 \author[Kevin Ruiz \and Brady Lamson]{Kevin Ruiz \and Brady Lamson}
@@ -17,30 +20,9 @@
 
 \input{background.tex}
 
-\begin{frame}{Use meaningful titles that actually provide information}
-    \begin{columns}
-        \begin{column}{0.6\textwidth}
-            Wow!
-        \end{column}
-        \begin{column}{0.4\textwidth}
-            \begin{itemize}
-                \item Some
-                \item Interesting
-                \item Points
-            \end{itemize}
-        \end{column}
-    \end{columns}
-\end{frame}
+\input{implementation.tex}
 
-\section{A Section}
-
-\begin{frame}{Make your presentation interactive}
-    \begin{cublock}[What about a question to the audience?]
-        \begin{overlayarea}{\textwidth}{\baselineskip}
-            \only<2->{Followed by the answer.}
-        \end{overlayarea}
-    \end{cublock}
-\end{frame}
+\input{results.tex}
 
 % Q&A
 \begin{frame}[standout]

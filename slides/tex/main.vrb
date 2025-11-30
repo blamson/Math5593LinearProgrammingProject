@@ -1,0 +1,9 @@
+\frametitle{The AMPL Model - Obective Function and Constraints}
+\begin{minted}[fontsize=\small, breaklines, frame=single, autogobble]{text}
+minimize SSE:
+    sum {i in Car}
+        ( y[i] - sum {j in Variables} (bplus[j] - bminus[j]) * x[i,j] )^2;
+
+subject to L1_budget:
+    sum {j in Variables: j != 'intercept'} (bplus[j] + bminus[j]) <= t;
+\end{minted}

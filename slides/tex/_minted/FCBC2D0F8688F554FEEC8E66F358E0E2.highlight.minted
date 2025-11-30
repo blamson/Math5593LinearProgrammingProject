@@ -1,0 +1,11 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+set Car;
+set Variables;
+
+param y \PYGZob{}i in Car\PYGZcb{};
+param x \PYGZob{}i in Car, j in Variables\PYGZcb{};
+param t;
+
+var bplus\PYGZob{}j in Variables\PYGZcb{}  \PYGZgt{}= 0;
+var bminus\PYGZob{}j in Variables\PYGZcb{} \PYGZgt{}= 0;
+\end{MintedVerbatim}

@@ -8,7 +8,7 @@
 \metroset{sectionpage = progressbar}
 \metroset{subsectionpage = progressbar}
 \metroset{progressbar = frametitle}
-\metroset{numbering = fraction}
+\metroset{numbering = counter}
 \metroset{block = fill}
 
 % Progress bar thickness

@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+minimize SSE:
+    sum \PYGZob{}i in Car\PYGZcb{}
+        ( y[i] \PYGZhy{} sum \PYGZob{}j in Variables\PYGZcb{} (bplus[j] \PYGZhy{} bminus[j]) * x[i,j] )\PYGZca{}2;
+
+subject to L1\PYGZus{}budget:
+    sum \PYGZob{}j in Variables: j != \PYGZsq{}intercept\PYGZsq{}\PYGZcb{} (bplus[j] + bminus[j]) \PYGZlt{}= t;
+\end{MintedVerbatim}
