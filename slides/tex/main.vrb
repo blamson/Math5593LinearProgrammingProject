@@ -1,8 +1,0 @@
-\frametitle{The Python Model - Modeling Code}
-\begin{minted}[fontsize=\small, breaklines, frame=single, autogobble]{text}
-model = sm.OLS(y, X_scaled_df)
-results = model.fit_regularized(method='elastic_net', L1_wt=1.0, alpha=0.1)
-
-for variable, coefficient in results.params.items():
-    print(f"{variable}: {round(coefficient, 5)}")
-\end{minted}
