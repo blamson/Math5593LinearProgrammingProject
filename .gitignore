@@ -212,5 +212,9 @@ __marimo__/
 *.snm
 *.toc
 *.aux
+*.vrb
+*.log
+_minted/
+
 
 .DS_Store
