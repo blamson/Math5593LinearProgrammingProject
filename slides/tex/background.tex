@@ -46,7 +46,21 @@
 \end{frame}
 
 \begin{frame}{LASSO as a Quadratic Program (QP) - Setup}
+    \begin{itemize}
+        \item Converting this into the form of an LP is pretty straightforward, but some modifications are needed.
+        \item The RSS portion becomes the objective function, but it's squared so this is actually a quadratic program (QP).
+        \item The penalty will become the constraint, but the absolute value is inappropriate for an LP (or QP). 
+        \item To fix that, we let $b_j = b_j^+ - b_j^-$ where $b_j^+ , b_j^- \ge 0$. The absolute value then is just $|b_j| = b_j^+ + b_j^-$.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{LASSO as a Quadratic Program (QP) - Execution}
+    This gives us the following program.
+    
+    \begin{align*}
+        \min &\sum_i (y_i - \hat{y}_i)^2 \\
+        \text{subject to: } &\sum_{j=1}^p (b_j^+ + b_j^-) \le t \\
+        \hat{y}_i &= \sum_j b_j^+ x_{ij} - \sum_j b_j^- x_{ij} \\
+        b_j^+, b_j^- &\ge 0
+    \end{align*}
 \end{frame}

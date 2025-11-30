@@ -1,9 +1,8 @@
-\frametitle{The AMPL Model - Obective Function and Constraints}
+\frametitle{The Python Model - Modeling Code}
 \begin{minted}[fontsize=\small, breaklines, frame=single, autogobble]{text}
-minimize SSE:
-    sum {i in Car}
-        ( y[i] - sum {j in Variables} (bplus[j] - bminus[j]) * x[i,j] )^2;
+model = sm.OLS(y, X_scaled_df)
+results = model.fit_regularized(method='elastic_net', L1_wt=1.0, alpha=0.1)
 
-subject to L1_budget:
-    sum {j in Variables: j != 'intercept'} (bplus[j] + bminus[j]) <= t;
+for variable, coefficient in results.params.items():
+    print(f"{variable}: {round(coefficient, 5)}")
 \end{minted}

@@ -1,8 +1,20 @@
-\section{Results}
+\section{Results and Conclusion}
 
-\begin{frame}{Python Model Results}
+\begin{frame}{Model Results}
+\begin{table}[]
+    \begin{tabular}{|l|l|l|l|l|l|l|}
+        \hline
+        Model       & Intercept & cyl & disp & hp & wt & qsec \\ \hline
+        statsmodels & 19.99 & -1.64 & 0.0 & -1.16 & -2.99 & 0.0 \\
+        ampl        & 20.09 & -1.62 & 0.0 & -1.08 & -2.94 & 0.02 \\ \hline
+    \end{tabular}
+\end{table}
+
+As can be seen from this table, our implementation reached nearly identical results.
 \end{frame}
 
-\begin{frame}{AMPL Model Results}
-\end{frame}
+\begin{frame}{Conclusion}
+    As we've seen, tackling LASSO regression from the perspective of linear programming is very straightforward. 
 
+    I think this demonstrates just how close many of our seemingly disparate domains truly are! 
+\end{frame}
