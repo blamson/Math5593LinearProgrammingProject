@@ -24,6 +24,31 @@
     \end{itemize}  
 \end{frame}
 
+
+\begin{frame}{ACS - Overview}
+    \begin{itemize} 
+        \item For more roboust testing we used an actual data.
+        \item The ACS is a household survey providing information on social, economic, housing, and demographic charactersitics of the U.S. population.
+        \item The ACS is very clean with clean identefiers for each indvidaul surveyed throught time. 
+    \end{itemize}  
+\end{frame}
+
+\begin{frame}{ACS Data - Example Rows}
+    \includegraphics[scale=0.8]{img/ACS_Data.png}
+\end{frame}
+
+\begin{frame}{The Regression Model for the ACS}
+    Our model uses the following variables from the full dataset:
+    \begin{itemize} 
+        \item wage: Miles per gallon. (Response variable)
+        \item schoolyr: Number of cylinders
+        \item schoolyr^2: Cubic inches of displacement
+        \item uhrswork: Hours worked per week
+        \item female: Indicator for female 
+    \end{itemize}  
+\end{frame}
+
+
 \begin{frame}[fragile]{The AMPL Model - Parameters and Variables}
 \begin{minted}[fontsize=\small, breaklines, frame=single, autogobble]{text}
 set Car;

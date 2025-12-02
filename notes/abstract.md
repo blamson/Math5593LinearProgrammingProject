@@ -56,7 +56,7 @@ $$
 
 This is the structure we will be working with for this project.
 
-## The dataset
+## The datasets being used 
 
 For this project we'll be using the classic `mtcars` toy dataset. Below is a description of the table from the R documentation.
 
@@ -66,4 +66,10 @@ The model for this dataset will be using the vehicles "miles per gallon" as the 
 
 This table was chosen due to the small number of rows relative to the large number of variables. This is useful for this project as using too many variables on smaller datasets can cause coefficients to vary a lot and can result in many useless predictor variables. Each coefficient tries to estimate its own relationship with the response, but with so few observations, the model doesn’t have enough information to estimate all coefficients reliably. This leads to high variability and unstable coefficient estimates.
 
+We will also be using `American Community Survey` data from IPUMS. Which, is a household survey providing information on social, economic, housing, and demographic charactersitics of the U.S. population. 
+
+The variables used from this dataset were the following, age, wage, schoolyr, schoolyr2, uhrswork, female. It was also randomly sampled for 800 just for computational limitations. 
+
 LASSO is a great option for this kind of situation as it will, by design, drag any of the unnecessary predictor coefficients to 0 and remove them from the model. We anticipate that this dataset will allow us to showcase this functionality and how that penalty will change for different values of $\lambda$ or $t$.
+
+
