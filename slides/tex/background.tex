@@ -4,10 +4,25 @@
     \begin{columns}
         \begin{column}{0.6\textwidth}
             \begin{itemize}
-                \item Regreesion fits a line, plane or hyperplane through a set of points in $n$ dimensional space.
-                \item This fitting is done by treating the "response" variable as a function of other "predictor" variables.
-                \item The fit is improved by minimizing the lines overall distance from the points, otherwise known as the residuals.
-                \item This is known as minimizing the "residual sum of squares", or, RSS.
+                \item Regression is a statistical technique that allows us to see the relationship between a \textbf{dependent variable} and a set of \textbf{independent variables}.
+                \item It is commonly known as a line fit through a set of data points! 
+                \item The most basic form of it is $y = \beta_0 + \beta_1 x + \epsilon$ Where the $\beta$ coefficients are estimated from the data and $\epsilon$ represents random error unexplained by the model.
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \includegraphics[scale=0.45]{img/simple-lin-reg.jpg}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{How is the regression line chosen?}
+    \begin{columns}
+        \begin{column}{0.6\textwidth}
+            \begin{itemize}
+                \item But how is that line created? How are those $\beta$ coefficients estimated? 
+                \item In most situations, no line will perfectly fit the data so we want it to be as close as possible.
+                \item The distance from the line to a given data point is called a \textbf{residual}, we want these to be small.
+                \item So, linear regression seeks to minimize the \textbf{residual sum of squares}, or \textbf{RSS}.
             \end{itemize}
         \end{column}
         \begin{column}{0.4\textwidth}
@@ -16,32 +31,68 @@
     \end{columns}
 \end{frame}
 
+\begin{frame}{Why isn't Linear Regression an LP?}
+    Our goal to minimize the RSS can be represented as:
+
+    \vspace{-6mm}
+    \begin{align*}
+        &\min \sum_{i=1}^n (y_i - \hat{y}_i)^2 \\
+        &\hat{y}_i = \sum_{j=1}^p \beta_j x_{ij}
+    \end{align*}
+
+    Where $y_i$ is the actual response value, and $\hat{y}_i$ is that value estimated by our model. 
+
+    That looks like an objective function, but it's missing something. The $\beta$ values are completely unconstrained! They could be anything. 
+    
+    So, simple linear regression can't be formulated as an LP. That's where penalized regression comes in.
+\end{frame}
+
+% \begin{frame}{What is regression?}
+%     \begin{columns}
+%         \begin{column}{0.6\textwidth}
+%             \begin{itemize}
+%                 \item Regreesion fits a line, plane or hyperplane through a set of points in $n$ dimensional space.
+%                 \item This fitting is done by treating the "response" variable as a function of other "predictor" variables.
+%                 \item The fit is improved by minimizing the lines overall distance from the points, otherwise known as the residuals.
+%                 \item This is known as minimizing the "residual sum of squares", or, RSS.
+%             \end{itemize}
+%         \end{column}
+%         \begin{column}{0.4\textwidth}
+%             \includegraphics[scale=0.45]{img/residual.png}
+%         \end{column}
+%     \end{columns}
+% \end{frame}
+
 \begin{frame}{Penalized Regression}
     \begin{itemize}
-        \item Having more predictors can often improve model performance, but at the cost of increased complexity.
-        \item There are many consequences to overly complex models, so penalized regression models attempt to help with this.
-        \item LASSO regression is surprise, a type of penalized regression.
+        \item In statistical modeling, it can often be advantageous to have as simple a model as possible. Thus, there are tools that penalize overly complex models.
+        \item These tools come in different forms. There are metrics that take the number of dependent variables into account, as well as models with built in penalties that affect the coefficients.
+        \item We're interested in an example of the latter: \textbf{LASSO regression}, a type of \textbf{penalized regression}.
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Penalized Regression Structure}
-    Penalized regression is made up of two chunks. The RSS part shared with linear regression, and a new penalty chunk.
+\begin{frame}{Penalized Regression}
+    LASSO regression is made up of two chunks. The RSS part shared with linear regression, and a new penalty chunk. 
 
     \begin{align*}
         \text{Linear Regression: } \quad &\min \sum_{i=1}^n (y_i - \hat{y}_i)^2 \\
         \text{LASSO Regression: } \quad
         &\min \underbrace{ \sum_{i=1}^n (y_i - \hat{y}_i)^2}_{\text{RSS}}
         +
-        \underbrace{\lambda \sum_{j=1}^p |b_j|}_{\text{Penalty}} \\
-        \hat{y}_i &= \sum_{j=1}^p b_j x_{ij}
+        \underbrace{\lambda \sum_{j=1}^p |b_j|}_{\text{Penalty}}
+        % \hat{y}_i &= \sum_{j=1}^p b_j x_{ij}
     \end{align*}
+
+    That penalty is the key here.
 \end{frame}
 
-\begin{frame}{LASSO Regression Features}
+\begin{frame}{LASSO Regression Penalty}
+    The penalty has some useful features and consequences.
     \begin{itemize}
-        \item The penalty is very useful because it can drag coefficients all the way down to zero.
-        \item What this means is LASSO regression can completely remove unimportant variables from a model!
+        \item The penalty can drag coefficients all the way down to zero.
+        \item Because of this, LASSO regression can completely remove unimportant variables from a model!
         \item This makes it a convenient variable selection tool.
+        \item When re-written, the penalty also gives us the \textbf{constraint} we need for an LP.
     \end{itemize}
 \end{frame}
 
