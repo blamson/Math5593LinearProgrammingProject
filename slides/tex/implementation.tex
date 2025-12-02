@@ -1,6 +1,6 @@
 \section{Implementation}
 
-\begin{frame}{The Data - Overview}
+\begin{frame}{mtcars - Overview}
     \begin{itemize} 
         \item For this project we'll be using the classic `mtcars` toy dataset.
         \item "The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models)."
@@ -8,11 +8,23 @@
     \end{itemize}  
 \end{frame}
 
-\begin{frame}{The Data - Example Rows}
+\begin{frame}{mtcars - Example Rows}
     \includegraphics[scale=0.8]{img/mtcars.png}
 \end{frame}
 
-\begin{frame}{The Regression Model}
+\begin{frame}{ACS Data - Overview}
+    \begin{itemize} 
+        \item For more roboust testing we used an actual data.
+        \item The ACS is a household survey providing information on social, economic, housing, and demographic charactersitics of the U.S. population.
+        \item The ACS is very clean with clean identefiers for each indvidaul surveyed throught time. 
+    \end{itemize}  
+\end{frame}
+
+\begin{frame}{ACS Data - Example Rows}
+    \includegraphics[scale=0.8]{img/ACS_Data.png}
+\end{frame}
+
+\begin{frame}{The Regression Model mtcars}
     Our model uses the following variables from the full dataset:
     \begin{itemize} 
         \item mpg: Miles per gallon. (Response variable)
@@ -25,26 +37,15 @@
 \end{frame}
 
 
-\begin{frame}{ACS - Overview}
-    \begin{itemize} 
-        \item For more roboust testing we used an actual data.
-        \item The ACS is a household survey providing information on social, economic, housing, and demographic charactersitics of the U.S. population.
-        \item The ACS is very clean with clean identefiers for each indvidaul surveyed throught time. 
-    \end{itemize}  
-\end{frame}
-
-\begin{frame}{ACS Data - Example Rows}
-    \includegraphics[scale=0.4]{img/ACS_Data.png}
-\end{frame}
-
 \begin{frame}{The Regression Model for the ACS}
     Our model uses the following variables from the full dataset:
     \begin{itemize} 
-        \item wage: Miles per gallon. (Response variable)
-        \item schoolyr: Number of cylinders
-        \item $\text{schoolyr}^2$: Cubic inches of displacement
-        \item uhrswork: Hours worked per week
+        \item wage: Current hourly wage reported
+        \item age: Age of indvidaul
         \item female: Indicator for female 
+        \item schoolyr: The number of years in school
+        \item $\text{schoolyr}^2$: The number of years in school squRed
+        \item uhrswork: Hours worked per week
     \end{itemize}  
 \end{frame}
 
