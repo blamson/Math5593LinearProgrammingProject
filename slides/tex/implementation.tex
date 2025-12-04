@@ -14,14 +14,16 @@
 
 \begin{frame}{ACS Data - Overview}
     \begin{itemize} 
-        \item For more roboust testing we used an actual data.
+        \item For more roboust testing we a real world dataset 
+        \item Will help us show numerical stablity for larger datasets
         \item The ACS is a household survey providing information on social, economic, housing, and demographic charactersitics of the U.S. population.
         \item The ACS is very clean with clean identefiers for each indvidaul surveyed throught time. 
     \end{itemize}  
 \end{frame}
 
 \begin{frame}{ACS Data - Example Rows}
-    \includegraphics[scale=0.8]{img/ACS_Data.png}
+    \centering 
+    \includegraphics[scale=0.9]{img/ACS_Data.png}
 \end{frame}
 
 \begin{frame}{The Regression Model mtcars}
@@ -40,8 +42,8 @@
 \begin{frame}{The Regression Model for the ACS}
     Our model uses the following variables from the full dataset:
     \begin{itemize} 
-        \item wage: Current hourly wage reported
-        \item age: Age of indvidaul
+        \item wage: Current hourly wage reported (Response variable)
+        \item age: Age of individual
         \item female: Indicator for female 
         \item schoolyr: The number of years in school
         \item $\text{schoolyr}^2$: The number of years in school squRed
